@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" [style.font-size.px]="counter" [class.highlight]="counter % 2 ===0"
+      href="index.html">conduit</a>
+    <input #tKeyword class="form-control form-control-sm search-input" type="text" placeholder="Keyword" />
+    <pre *ngIf="tKeyword.value === ''" >要輸入內容再按搜尋</pre>
+    <!--<input #tKeyword class="form-control form-control-sm search-input" type="text" placeholder="Keyword"
+      [(ngModel)]="search" (keyup.enter)="callapp(tKeyword.value)" (keyup.escape)="callapp('')" />-->
+    <pre>{{search}}</pre>
+    <button class="btn btn-sm btn-primary" (click)="callapp(tKeyword.value,$event)">
+      <i class="ion-search"></i>
+    </button>
+  </div>
+</nav>

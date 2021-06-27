@@ -1,0 +1,20 @@
+<div class="post-preview" *ngFor="let item of (list) ;let i=index">
+  <div class="post-meta">
+    <a href="profile.html">
+      <img [src]="item.author.image" />
+    </a>
+    <div class="info">
+      <!--<a [href]="item.author.username" class="author">{{item.author.bio}}</a>-->
+      <a href="mailto:{{item.author.username}}" class="author">{{item.author.bio}}</a>
+      <span class="date">{{item.createdAt}}</span>
+    </div>
+    <button class="btn btn-outline-primary btn-sm pull-xs-right">
+      <i class="ion-heart"></i>
+    </button>
+  </div>
+  <a href="post.html" class="preview-link">
+    <h1>{{item.title}}</h1>
+    <p>{{item.body}}</p>
+    <span>Read more...</span>
+  </a>
+</div>
